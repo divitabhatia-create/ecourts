@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Surface Logic */
+  --color-surface: #f8f9fa;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+  --color-surface-container-lowest: #ffffff;
+
+  /* Primary Palette (Purple Refinement) */
+  --color-primary-navy: #0A051A;
+  --color-primary-navy-container: #1C113D;
+  
+  /* Brand Theme */
+  --color-brand-purple: #8947FF;
+  --color-legal-green: var(--color-brand-purple);
+  --color-legal-green-container: #EADFFF;
+  --color-legal-amber: #fbbc00;
+  --color-legal-red: #ba1a1a;
+  
+  /* Outline */
+  --color-outline-ghost: color-mix(in srgb, #c4c6d0 15%, transparent);
+
+  /* Overrides */
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-primary-navy font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+.mono-text {
+  @apply font-mono;
+}
+
+.glass-nav {
+  @apply backdrop-blur-[20px];
+  background-color: color-mix(in srgb, var(--color-primary-navy-container) 85%, transparent);
+}
